@@ -1,4 +1,4 @@
 leniverse/
 .venv/
 
-*.json
+data.json
