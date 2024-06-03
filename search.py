@@ -39,7 +39,7 @@ def main():
 
         if choice == '1':
             while True:
-                kr = input("Korean to search: ").strip()
+                kr = input("Search: ").strip()
                 if kr.lower() == 'back':
                     break
                 results = search_korean_phrase(kr, data)
