@@ -1,9 +1,18 @@
 import openpyxl
+import json
 
-dataframe = openpyxl.load_workbook("leniverse\[LENIVERSE] EP_[LENIVERSE] EP.19 나랑 하이브 같이 가자! 1편ENG_평가완료.xlsx")
+workbook = openpyxl.load_workbook('leniverse/1.xlsx')
+worksheet = workbook.active
 
-dataframe1 = dataframe.active
+data_list = []
 
-for row in range(0, dataframe1.max_row):
-    for col in dataframe1.iter_cols(1, dataframe1.max_column):
-        print(col[row].value)
+for row in worksheet.iter_rows(min_row=2, max_row=worksheet.max_row, min_col=3, max_col=4, values_only=True):
+    data_list.append({
+        'kr': row[0],
+        'eng': row[1]
+    })
+
+json_data = json.dumps(data_list, indent=4)
+
+with open('data.json', 'w') as f:
+    f.write(json_data)
