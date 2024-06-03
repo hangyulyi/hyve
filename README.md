@@ -1,7 +1,7 @@
 ## Search translated Korean words from database
 
 ### How to use:
-If you can tell, the data file isn't there and that's because it can't be public. However, any .json file structured like the following will have no issues running.
+As you can tell, the data file isn't there and that's because it can't be public. However, any .json file structured like the following will have no issues running.
 
 ```
 [
