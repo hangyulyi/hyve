@@ -1,6 +1,8 @@
 import openpyxl
 import json
 
+# TODO: find fix to display korean in json file
+
 workbook = openpyxl.load_workbook('leniverse/1.xlsx')
 worksheet = workbook.active
 
