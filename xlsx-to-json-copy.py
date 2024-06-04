@@ -4,6 +4,7 @@ import json
 with open('data.json', 'r', encoding='utf-8') as file:
     data_list = json.load(file)
 
+# set directory equal to folder name with excel file
 directory = 'data'
 
 wb = openpyxl.load_workbook('enter excel file here.xlsx')
