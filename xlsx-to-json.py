@@ -2,11 +2,11 @@ import openpyxl
 import json
 import os
 
-
-data_list = []
-
 # insert name of folder you wish to iterate through with excel files
 directory = ''
+
+with open('data.json', 'r', encoding='utf-8') as file:
+    data_list = json.load(file)
 
 for filename in os.listdir(directory):
     if filename.endswith('.xlsx'):

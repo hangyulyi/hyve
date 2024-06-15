@@ -16,6 +16,8 @@
 import re
 import json
 
+# TODO: Add append to a file instead of rewriting
+
 '''
 iterate through .srt file to record start time, end time, and text
 '''
@@ -29,7 +31,7 @@ def parse_srt(path):
 
     subtitles = []
     for match in matches:
-        start_time, end_time, text = match
+        index, start_time, end_time, text = match
         text = text.strip()
         subtitles.append({
             'start_time': start_time,
@@ -53,7 +55,7 @@ def combine_subtitles(eng, kor):
         kor_start = kor[j]['start_time']
         kor_end = kor[j]['end_time']
 
-        if eng_start == kor_start:
+        if eng_start == kor_start and eng_end == kor_end:
             combined.append({
                 'eng': eng[i]['text'],
                 'kr': kor[j]['text']
@@ -77,6 +79,7 @@ def main():
     combined = combine_subtitles(eng_sub, kor_sub)
 
     file = 'data.json'
+
     with open(file, 'w', encoding='utf-8') as f:
         json.dump(combined, f, ensure_ascii=False, indent=4)
 
