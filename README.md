@@ -20,5 +20,5 @@ or you can add a new word to your .json file in the terminal.
 In order to exit an option, you will want to type `back` to go back to the main menu.
 
 ### TODO:
-- Create a frontend to make it easier to access
+- Create a frontend to make it easier to access (React)
 - Update backend to update realtime with new data
