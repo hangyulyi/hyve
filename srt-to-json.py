@@ -70,6 +70,10 @@ def combine_subtitles(eng, kor):
     return combined
 
 def main():
+
+    with open('data.json', 'r', encoding='utf-8') as file:
+        data_list = json.load(file)
+
     eng_srt = ''
     kor_srt = ''
 
@@ -78,10 +82,10 @@ def main():
 
     combined = combine_subtitles(eng_sub, kor_sub)
 
-    file = 'data.json'
+    json_data = json.dumps(data_list, ensure_ascii=False, indent=4)
 
-    with open(file, 'w', encoding='utf-8') as f:
-        json.dump(combined, f, ensure_ascii=False, indent=4)
+    with open('data.json', 'w', encoding='utf-8') as f:
+        f.write(json_data)
 
 if __name__ == "__main__":
     main()
