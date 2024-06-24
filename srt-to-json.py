@@ -16,7 +16,6 @@
 import re
 import json
 
-# TODO: Add append to a file instead of rewriting
 
 '''
 iterate through .srt file to record start time, end time, and text
