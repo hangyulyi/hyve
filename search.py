@@ -22,6 +22,7 @@ def add_translation(kr, eng, data, file_path):
         json.dump(data, f, ensure_ascii=False, indent=4)
 
 def main():
+    # File path can be updated accordingly in line with user
     file_path = 'data.json'
 
     if os.path.exists(file_path):
